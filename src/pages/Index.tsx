@@ -31,200 +31,240 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Icon name="Wrench" size={28} className="text-accent" />
-            <span className="text-xl font-bold">АвтоСервис Opel-Chevrolet</span>
+      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 shadow-sm">
+        <div className="container flex h-20 items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+              <Icon name="Wrench" size={20} className="text-primary-foreground" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-semibold tracking-tight">Opel & Chevrolet</span>
+              <span className="text-xs text-muted-foreground tracking-wider uppercase">Premium Service</span>
+            </div>
           </div>
-          <nav className="hidden md:flex gap-6">
-            <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-accent transition-colors">
+          <nav className="hidden md:flex gap-8">
+            <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">
               Услуги
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-accent transition-colors">
+            <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">
               О нас
             </button>
-            <button onClick={() => scrollToSection('booking')} className="text-sm font-medium hover:text-accent transition-colors">
+            <button onClick={() => scrollToSection('booking')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">
               Запись
             </button>
-            <button onClick={() => scrollToSection('contacts')} className="text-sm font-medium hover:text-accent transition-colors">
+            <button onClick={() => scrollToSection('contacts')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">
               Контакты
             </button>
           </nav>
-          <Button onClick={() => scrollToSection('booking')} className="hidden md:flex">
+          <Button onClick={() => scrollToSection('booking')} className="hidden md:flex shadow-lg hover:shadow-xl transition-shadow">
             Записаться
           </Button>
         </div>
       </header>
 
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[700px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(26, 31, 44, 0.75), rgba(26, 31, 44, 0.75)), url('https://cdn.poehali.dev/projects/5499ed27-563c-4009-ae1a-c9c0b6a92530/files/ac6d6d2d-7dab-4a8c-bf84-af4467cb0d96.jpg')`
+            backgroundImage: `linear-gradient(rgba(15, 18, 23, 0.7), rgba(15, 18, 23, 0.8)), url('https://cdn.poehali.dev/projects/5499ed27-563c-4009-ae1a-c9c0b6a92530/files/ac6d6d2d-7dab-4a8c-bf84-af4467cb0d96.jpg')`
           }}
         />
-        <div className="container relative z-10 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Профессиональный ремонт<br />Opel и Chevrolet
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20" />
+        <div className="container relative z-10 text-center text-white px-4">
+          <div className="inline-block mb-6 px-6 py-2 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/30 animate-fade-in">
+            <span className="text-sm font-medium text-accent">Премиум-сервис с 2008 года</span>
+          </div>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in leading-tight">
+            Экспертный уход<br />за вашим автомобилем
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in">
-            Компьютерная диагностика и выявление неисправностей
+          <p className="text-xl md:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto animate-fade-in font-light tracking-wide">
+            Компьютерная диагностика премиум-класса для Opel и Chevrolet
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button onClick={() => scrollToSection('booking')} size="lg" className="text-lg px-8">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in">
+            <Button onClick={() => scrollToSection('booking')} size="lg" className="text-base px-10 py-6 shadow-2xl hover:shadow-accent/20 transition-all hover:scale-105">
               Записаться на диагностику
             </Button>
-            <Button onClick={() => scrollToSection('services')} size="lg" variant="outline" className="text-lg px-8 bg-white/10 hover:bg-white/20 text-white border-white">
+            <Button onClick={() => scrollToSection('services')} size="lg" variant="outline" className="text-base px-10 py-6 bg-white/5 hover:bg-white/10 text-white border-white/30 backdrop-blur-sm hover:border-white/50 transition-all hover:scale-105">
               Наши услуги
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-secondary/30">
+      <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover-scale">
+            <Card className="text-center hover-scale border-none shadow-xl bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Icon name="Monitor" size={32} className="text-accent" />
+                <div className="mx-auto mb-5 w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                  <Icon name="Monitor" size={36} className="text-accent" />
                 </div>
-                <CardTitle>15+ лет опыта</CardTitle>
+                <CardTitle className="text-2xl">15+ лет опыта</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Профессиональное обслуживание автомобилей марок Opel и Chevrolet</p>
+                <p className="text-muted-foreground text-base leading-relaxed">Профессиональное обслуживание автомобилей марок Opel и Chevrolet</p>
               </CardContent>
             </Card>
-            <Card className="text-center hover-scale">
+            <Card className="text-center hover-scale border-none shadow-xl bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Icon name="Award" size={32} className="text-accent" />
+                <div className="mx-auto mb-5 w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                  <Icon name="Award" size={36} className="text-accent" />
                 </div>
-                <CardTitle>Сертифицированные специалисты</CardTitle>
+                <CardTitle className="text-2xl">Сертификация</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Наши мастера регулярно проходят обучение и повышение квалификации</p>
+                <p className="text-muted-foreground text-base leading-relaxed">Мастера с международными сертификатами и регулярным повышением квалификации</p>
               </CardContent>
             </Card>
-            <Card className="text-center hover-scale">
+            <Card className="text-center hover-scale border-none shadow-xl bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Icon name="ShieldCheck" size={32} className="text-accent" />
+                <div className="mx-auto mb-5 w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                  <Icon name="ShieldCheck" size={36} className="text-accent" />
                 </div>
-                <CardTitle>Гарантия качества</CardTitle>
+                <CardTitle className="text-2xl">Гарантия</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Предоставляем гарантию на все виды работ и используемые запчасти</p>
+                <p className="text-muted-foreground text-base leading-relaxed">Расширенная гарантия на работы и оригинальные запчасти премиум-класса</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-20">
+      <section id="services" className="py-28 bg-background">
         <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-12">Наши услуги</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="hover-scale border-2 hover:border-accent transition-all">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon name="Cpu" size={24} className="text-accent" />
+          <div className="text-center mb-16">
+            <span className="inline-block text-sm font-medium text-accent mb-3 tracking-wider uppercase">Наши услуги</span>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">Полный спектр услуг</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Премиум-обслуживание вашего автомобиля</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover-scale border-none shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon name="Cpu" size={26} className="text-white" />
                   </div>
-                  <CardTitle>Компьютерная диагностика</CardTitle>
+                  <div>
+                    <CardTitle className="text-xl mb-1">Компьютерная диагностика</CardTitle>
+                    <span className="text-xs text-accent font-medium">Приоритетная услуга</span>
+                  </div>
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Полная компьютерная диагностика всех систем автомобиля. Выявление скрытых неисправностей и ошибок электроники.
+              <CardContent className="relative z-10">
+                <CardDescription className="text-base leading-relaxed mb-5">
+                  Полная компьютерная диагностика всех систем. Выявление скрытых неисправностей и ошибок электроники.
                 </CardDescription>
-                <div className="mt-4 text-2xl font-bold text-accent">от 1500 ₽</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">от 1 500</span>
+                  <span className="text-lg text-muted-foreground">₽</span>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover-scale">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon name="Cog" size={24} className="text-accent" />
+            <Card className="hover-scale border-none shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon name="Cog" size={26} className="text-primary-foreground" />
                   </div>
-                  <CardTitle>Ремонт двигателя</CardTitle>
+                  <CardTitle className="text-xl">Ремонт двигателя</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Капитальный и текущий ремонт двигателей Opel и Chevrolet. Замена масла, фильтров, ремней ГРМ.
+              <CardContent className="relative z-10">
+                <CardDescription className="text-base leading-relaxed mb-5">
+                  Капитальный и текущий ремонт двигателей. Замена масла, фильтров, ремней ГРМ.
                 </CardDescription>
-                <div className="mt-4 text-2xl font-bold text-accent">от 3000 ₽</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">от 3 000</span>
+                  <span className="text-lg text-muted-foreground">₽</span>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover-scale">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon name="Gauge" size={24} className="text-accent" />
+            <Card className="hover-scale border-none shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon name="Gauge" size={26} className="text-primary-foreground" />
                   </div>
-                  <CardTitle>Ходовая часть</CardTitle>
+                  <CardTitle className="text-xl">Ходовая часть</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Диагностика и ремонт подвески, замена амортизаторов, рычагов, сайлентблоков. Развал-схождение.
+              <CardContent className="relative z-10">
+                <CardDescription className="text-base leading-relaxed mb-5">
+                  Диагностика и ремонт подвески, замена амортизаторов. Развал-схождение.
                 </CardDescription>
-                <div className="mt-4 text-2xl font-bold text-accent">от 2500 ₽</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">от 2 500</span>
+                  <span className="text-lg text-muted-foreground">₽</span>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover-scale">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon name="Zap" size={24} className="text-accent" />
+            <Card className="hover-scale border-none shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon name="Zap" size={26} className="text-primary-foreground" />
                   </div>
-                  <CardTitle>Электрика</CardTitle>
+                  <CardTitle className="text-xl">Электрика</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Ремонт электропроводки, замена генератора, стартера. Устранение неисправностей электрооборудования.
+              <CardContent className="relative z-10">
+                <CardDescription className="text-base leading-relaxed mb-5">
+                  Ремонт электропроводки, замена генератора, стартера. Устранение неисправностей.
                 </CardDescription>
-                <div className="mt-4 text-2xl font-bold text-accent">от 2000 ₽</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">от 2 000</span>
+                  <span className="text-lg text-muted-foreground">₽</span>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover-scale">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon name="Disc" size={24} className="text-accent" />
+            <Card className="hover-scale border-none shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon name="Disc" size={26} className="text-primary-foreground" />
                   </div>
-                  <CardTitle>Тормозная система</CardTitle>
+                  <CardTitle className="text-xl">Тормозная система</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Замена тормозных колодок, дисков, суппортов. Прокачка тормозной системы, замена жидкости.
+              <CardContent className="relative z-10">
+                <CardDescription className="text-base leading-relaxed mb-5">
+                  Замена тормозных колодок, дисков. Прокачка системы, замена жидкости.
                 </CardDescription>
-                <div className="mt-4 text-2xl font-bold text-accent">от 1800 ₽</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">от 1 800</span>
+                  <span className="text-lg text-muted-foreground">₽</span>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover-scale">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon name="Thermometer" size={24} className="text-accent" />
+            <Card className="hover-scale border-none shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon name="Thermometer" size={26} className="text-primary-foreground" />
                   </div>
-                  <CardTitle>Система охлаждения</CardTitle>
+                  <CardTitle className="text-xl">Система охлаждения</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Ремонт и обслуживание системы охлаждения. Замена радиатора, термостата, помпы.
+              <CardContent className="relative z-10">
+                <CardDescription className="text-base leading-relaxed mb-5">
+                  Ремонт и обслуживание системы охлаждения. Замена радиатора, термостата.
                 </CardDescription>
-                <div className="mt-4 text-2xl font-bold text-accent">от 2200 ₽</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">от 2 200</span>
+                  <span className="text-lg text-muted-foreground">₽</span>
+                </div>
               </CardContent>
             </Card>
           </div>
